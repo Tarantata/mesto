@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Путешествие по России</title>
+  <link rel="stylesheet" href="./pages/index.css">
+</head>
+<body class="page">
+  <header class="header">
+    <img class="header__icon-logo" src="./images/logo.svg" alt="логотип сайта">
+  </header>
+  <main class="core">
+    <section class="profile">
+      <img class="profile__avatar" src="./images/avatar.png" alt="Портрет Жака-Ива Кусто">
+      <h1 class="profile__title">Жак-Ив Кусто</h1>
+      <p class="profile__subtitle">Исследователь океана</p>
+      <button class="profile__edit" type="button" aria-label="Внесение изменений"></button>
+      <button class="profile__add" type="button" aria-label="Добавление"></button>
+    </section>
+    <section class="places">
+      <ul class="content">
+        <li class="card">
+          <img class="card__place" src="./images/church.jpg" alt="Сентинский храм в Карачаево-Черкесии">
+          <div class="card__info">
+            <h2 class="card__title">Карачаевск</h2>
+            <button class="card__icon-like" type="button" aria-label="Кнопка лайк"></button>
+          </div>
+        </li>
+        <li class="card">
+          <img class="card__place" src="./images/elbrus.jpg" alt="Вид горы Эльбрус издалека">
+          <div class="card__info">
+            <h2 class="card__title">Гора Эльбрус</h2>
+            <button class="card__icon-like" type="button" aria-label="Кнопка лайк"></button>
+          </div>
+        </li>
+        <li class="card">
+          <img class="card__place" src="./images/dombai.jpg" alt="Вершина Белалакая в западной части главного хребта Большого Кавказа">
+          <div class="card__info">
+            <h2 class="card__title">Домбай</h2>
+            <button class="card__icon-like" type="button" aria-label="Кнопка лайк"></button>
+          </div>
+        </li>
+        <li class="card">
+          <img class="card__place" src="./images/elbrus.jpg" alt="Вид горы Эльбрус издалека">
+          <div class="card__info">
+            <h2 class="card__title">Гора Эльбрус</h2>
+            <button class="card__icon-like" type="button" aria-label="Кнопка лайк"></button>
+          </div>
+        </li>
+        <li class="card">
+          <img class="card__place" src="./images/dombai.jpg" alt="Вершина Белалакая в западной части главного хребта Большого Кавказа">
+          <div class="card__info">
+            <h2 class="card__title">Домбай</h2>
+            <button class="card__icon-like" type="button" aria-label="Кнопка лайк"></button>
+          </div>
+        </li>
+        <li class="card">
+          <img class="card__place" src="./images/church.jpg" alt="Сентинский храм в Карачаево-Черкесии">
+          <div class="card__info">
+            <h2 class="card__title">Карачево-Черкесия</h2>
+            <button class="card__icon-like" type="button" aria-label="Кнопка лайк"></button>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer class="footer">
+    <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+  </footer>
+  <div class="popup">
+    <div class="popup__container">
+      <button class="popup__close" type="button" aria-label="Закрыть форму"></button>
+      <form class="popup__form" method="post" name="registration">
+        <h2 class="popup__heading">Редактировать профиль</h2>
+        <input type="text" class="popup__input popup__input_info_person" name="person" value="" placeholder="Имя">
+        <input type="text" class="popup__input popup__input_info_profession" name="profession" value="" placeholder="О себе">
+        <button class="popup__save" type="submit" aria-label="Сохранить изменения">Сохранить</button>
+      </form>
+    </div>
+  </div>
+  <script src="./scripts/index.js"></script>
+</body>
+</html>
