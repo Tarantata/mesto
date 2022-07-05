@@ -8,8 +8,8 @@ const nameInput = formElement.querySelector('.popup__input_info_person');
 const jobInput = formElement.querySelector('.popup__input_info_profession');
 
 const openPopup = function () {
-  nameInput.setAttribute('value', nameProfile.textContent);
-  jobInput.setAttribute('value', jobProfile.textContent);
+  nameInput.setAttribute.value = nameProfile.textContent;
+  jobInput.setAttribute.value = jobProfile.textContent;
   popupElement.classList.add('popup_active');
 };
 
