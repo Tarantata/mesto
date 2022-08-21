@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Путешествие по России</title>
+  <link rel="stylesheet" href="./pages/index.css">
+</head>
+<!-- Header -->
+<body class="page">
+  <header class="header">
+    <img class="header__icon-logo" src="./images/logo.svg" alt="логотип сайта">
+  </header>
+  <main class="core">
+    <!-- Profile -->
+    <section class="profile">
+      <img class="profile__avatar" src="./images/avatar.png" alt="Портрет Жака-Ива Кусто">
+      <h1 class="profile__title" value = "#">Жак-Ив Кусто</h1>
+      <p class="profile__subtitle" value = "#">Исследователь океана</p>
+      <button class="profile__edit" type="button" aria-label="Внесение изменений"></button>
+      <button class="profile__add" type="button" aria-label="Добавление"></button>
+    </section>
+    <section class="places">
+      <ul class="content">
+    
+      </ul>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+  </footer>
+
+  <!-- Контейнер поп-апа для Profile -->
+  <div class="popup popup_type_person">
+    <div class="popup__container">
+      <button class="popup__close" type="button" aria-label="Закрыть форму"></button>
+      <form class="form popup__form-person" method="post" name="person-form" novalidate>
+        <div class="align">
+          <h2 class="popup__heading-person">Редактировать профиль</h2>
+        </div>
+        <label class="popup__label">
+          <input type="text" class="form__input popup__input popup__input_person-name" name="person" value="Жак-Ив Кусто" placeholder="Имя" minlength="2" maxlength="40" required autocomplete="off">
+          <span id="person-error" class="error"></span>
+        </label>
+        <label class="popup__label">
+          <input type="text" class="form__input popup__input popup__input_person-profession" name="profession" value="Исследователь океана" placeholder="О себе" minlength="2" maxlength="200" required autocomplete="off">
+          <span id="profession-error" class="error"></span>
+        </label>
+        <button id="popup-button-person" class="popup__button" type="submit" disabled aria-label="Сохранить изменения">Сохранить</button>
+      </form>
+    </div>
+  </div>
+  <!-- Контейнер поп-апа для Place -->
+  <div class="popup popup_type_card">
+    <div class="popup__container">
+      <button class="popup__close" type="button" aria-label="Закрыть форму"></button>
+      <form class="form popup__form-place" method="post" name="place-form" novalidate>
+        <div class="align">
+          <h2 class="popup__heading-place">Новое место</h2>
+        </div>
+        <label class="popup__label">
+          <input type="text" class="form__input popup__input popup__input_place-name" name="name" value="" placeholder="Название" minlength="2" maxlength="30" required autocomplete="off">
+          <span id="name-error" class="error"></span>
+        </label>
+        <label class="popup__label">
+          <input type="url" class="form__input popup__input popup__input_place-link" name="link" value="" placeholder="Ссылка на картинку" required autocomplete="off">
+          <span id="link-error" class="error"></span>
+        </label>
+        <button id="popup-button-place" class="popup__button popup__button_invalid" type="submit" aria-label="Создать карточку">Создать</button>
+      </form>
+    </div>
+  </div>
+  <!-- Контейнер поп-апа для Picture -->
+  <div class="popup popup_type_image popup_transparent">
+    <div class="popup__container">
+      <button class="popup__close" type="button" aria-label="Закрыть форму"></button>
+      <form class="popup__form-picture" method="post" name="picture-form">
+        <img class="popup__picture-link" src="#" alt="#">
+        <h2 class="popup__picture-name"></h2>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Шаблон -->
+  <template class="new-card card-template_type_place">
+    <li class="card">
+      <button class="card__icon-delete" type="button" aria-label="Кнопка удалить"></button>
+      <img class="card__place" src="#" alt="">
+      <div class="card__info">
+        <h2 class="card__title"></h2>
+        <button class="card__icon-like" type="button" aria-label="Кнопка лайк"></button>
+      </div>
+    </li>
+  </template>
+
+  <script type="module" src="./scripts/index.js"></script>
+
+</body>
+</html>
