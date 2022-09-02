@@ -1,7 +1,7 @@
 import { selectorsConfig } from './index.js';
 
 export class Card {
-  constructor (data, templateSelector, handleCardClick) {
+  constructor ({data, handleCardClick}, templateSelector) {
     this._name = data.name;
     this._link = data.link;
     this._templateSelector = templateSelector;
@@ -40,7 +40,7 @@ export class Card {
         this._handleCardDelete();
     });      
       this._element.querySelector('.card__place').addEventListener('click', () => {
-        this._handleCardClick(this._name, this._link);
+        this._handleCardClick(this._cardPlace);
     });     
   }
 
