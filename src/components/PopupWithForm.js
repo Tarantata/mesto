@@ -1,5 +1,5 @@
 import {Popup} from "./Popup.js";
-import {selectorsConfig} from "./index.js"
+import {selectorsConfig} from "../pages/index.js"
 
 export class PopupWithForm extends Popup {
     constructor(popupSelector, submitForm) {

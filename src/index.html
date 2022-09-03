@@ -5,17 +5,16 @@
   <meta name="viewport" content="width=device-width initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Путешествие по России</title>
-  <link rel="stylesheet" href="./pages/index.css">
 </head>
 <!-- Header -->
 <body class="page">
   <header class="header">
-    <img class="header__icon-logo" src="./images/logo.svg" alt="логотип сайта">
+    <img class="header__icon-logo" src="<%=require('./images/logo.svg')%>" alt="логотип сайта">
   </header>
   <main class="core">
     <!-- Profile -->
     <section class="profile">
-      <img class="profile__avatar" src="./images/avatar.png" alt="Портрет Жака-Ива Кусто">
+      <img class="profile__avatar" src="<%=require('./images/avatar.png')%>" alt="Портрет Жака-Ива Кусто">
       <h1 class="profile__title" value = "#">Жак-Ив Кусто</h1>
       <p class="profile__subtitle" value = "#">Исследователь океана</p>
       <button class="profile__edit" type="button" aria-label="Внесение изменений"></button>
@@ -94,8 +93,6 @@
       </div>
     </li>
   </template>
-
-  <script type="module" src="./scripts/index.js"></script>
 
 </body>
 </html>

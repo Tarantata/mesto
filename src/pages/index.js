@@ -1,28 +1,13 @@
-import {Card} from "./Card.js";
-import {initialCards} from "./cards.js";
-import {PopupWithImage} from "./PopupWithImage.js";
-import {Section} from "./Section.js";
-import {UserInfo} from "./UserInfo.js";
-import {PopupWithForm} from "./PopupWithForm.js";
-import {Popup} from "./Popup.js";
-import {Validation} from "./FormValidator.js";
+import './index.css';
 
-const buttonOpenEditPerson = document.querySelector('.profile__edit');
-const buttonOpenNewPlace = document.querySelector('.profile__add');
-export const popupNewPlace = document.querySelector('.popup_type_card');
-export const popupTypePerson = document.querySelector('.popup_type_person');
-export const formPerson = document.querySelector('.popup__form-person');
-export const formPlace = document.querySelector('.popup__form-place');
-export const nameProfile = document.querySelector('.profile__title');
-export const jobProfile = document.querySelector('.profile__subtitle');
-export const inputNamePerson = document.querySelector('.popup__input_person-name');
-export const inputJobPerson = document.querySelector('.popup__input_person-profession');
-// export const inputNamePlace = document.querySelector('.popup__input_place-name');
-// export const inputLinkPlace = document.querySelector('.popup__input_place-link');
-const cardContent = document.querySelector('.content');
-export const inputNamePicture = document.querySelector('.popup__picture-name');
-export const inputLinkPicture = document.querySelector('.popup__picture-link');
-const popupBigPictureImage = document.querySelector('.popup_type_image');
+import {Card} from "../components/Card.js";
+import {initialCards} from "../utils/cards.js";
+import {PopupWithImage} from "../components/PopupWithImage.js";
+import {Section} from "../components/Section.js";
+import {UserInfo} from "../components/UserInfo.js";
+import {PopupWithForm} from "../components/PopupWithForm.js";
+import {Validation} from "../components/FormValidator.js";
+import {buttonOpenEditPerson, inputJobPerson, jobProfile, nameProfile, inputNamePerson, formPerson, popupTypePerson, popupBigPictureImage, popupNewPlace, formPlace, buttonOpenNewPlace, cardContent} from "../utils/constants.js";
 
 export const selectorsConfig = {
     form: '.form',
@@ -54,10 +39,8 @@ buttonOpenEditPerson.addEventListener('click', () => {
     popupPersonValid.clearSpan();
     popupPersonValid.activateButton();
 })
-personPopup.setEventListeners();
 
 const pictureBigSize = new PopupWithImage(popupBigPictureImage);
-pictureBigSize.setEventListeners();
 
 // функция отрисоки 1 карточки
 const createCard = (pictureData) => {
@@ -83,13 +66,16 @@ const placePopup = new PopupWithForm(popupNewPlace,
         const newCard = createCard(inputInfo);
         cardSection.addItem(newCard)
     });
-placePopup.setEventListeners();
 
 buttonOpenNewPlace.addEventListener('click', () => {
     placePopup.open();
     popupPlaceValid.clearSpan();
     popupPlaceValid.deactivateButton();
 })
+
+personPopup.setEventListeners();
+pictureBigSize.setEventListeners();
+placePopup.setEventListeners();
 
 cardSection.renderItems() // выполнили метод отрисовки
 

@@ -1,4 +1,4 @@
-import { selectorsConfig } from './index.js';
+import { selectorsConfig } from '../pages/index.js';
 
 export class Card {
   constructor ({data, handleCardClick}, templateSelector) {
