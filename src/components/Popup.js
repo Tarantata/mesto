@@ -26,9 +26,9 @@ export class Popup {
     /* Публичный метод добавления слушателя клика иконке закрытия попапа */
     setEventListeners() {
         this._popupSelector.addEventListener('mousedown', (evt) => {
-        if (evt.target.classList.contains('popup__close') || evt.target.classList.contains('popup')) {
-            this.close();
-        }
+            if (evt.target.classList.contains('popup__close') || evt.target.classList.contains('popup')) {
+                this.close();
+            }
         })
     }
 }

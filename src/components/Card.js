@@ -21,13 +21,12 @@ export class Card {
 
   generateCard() {
     this._element = this._getTemplate();
-    this._setEventListeners();
     this._cardPlace = this._element.querySelector('.card__place');
     this._cardTitle = this._element.querySelector('.card__title');
-    
     this._cardPlace.src = this._link;
     this._cardPlace.alt = this._name;
     this._cardTitle.textContent = this._name;
+    this._setEventListeners();
 
     return this._element;
   }
@@ -38,8 +37,8 @@ export class Card {
     });
       this._element.querySelector('.card__icon-delete').addEventListener('click', () => {
         this._handleCardDelete();
-    });      
-      this._element.querySelector('.card__place').addEventListener('click', () => {
+    });
+      this._cardPlace.addEventListener('click', () => {
         this._handleCardClick(this._cardPlace);
     });     
   }
