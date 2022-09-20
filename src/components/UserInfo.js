@@ -6,14 +6,14 @@ export class UserInfo{
     /* Публичный метод метод возврата объекта с данными пользователя */
     getUserInfo(){
         return {
-            title: this._personSelector.textContent,
-            subtitle: this._jobSelector.textContent,
+            name: this._personSelector.textContent,
+            about: this._jobSelector.textContent,
         }
     }
 
     /* Публичный метод метод возврата данных пользователя на страницу */
-    setUserInfo({person, profession}){
-        this._personSelector.textContent = person;
-        this._jobSelector.textContent = profession;
+    setUserInfo({name, about}){
+        this._personSelector.textContent = name;
+        this._jobSelector.textContent = about;
     }
 }

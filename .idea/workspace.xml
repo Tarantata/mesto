@@ -2,12 +2,141 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b745c16b-ebd1-4a53-9bcd-a129e8362596" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/.nojekyll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/align/align.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/card/__icon-delete/card__icon-delete.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/card/__icon-like/_active/card__icon-like_active.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/card/__icon-like/card__icon-like.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/card/__info/card__info.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/card/__place/card__place.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/card/__title/card__title.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/card/card.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/content/content.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/core/core.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/error/_active/error_active.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/error/error.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/footer/__copyright/footer__copyright.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/footer/footer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/form/form.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/header/__icon-logo/header__icon-logo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/header/header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/page/page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/places/places.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/popup/__button/_invalid/popup__button_invalid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/popup/__button/popup__button.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/popup/__close/popup__close.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/popup/__container/popup__container.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/popup/__form/popup__form-person.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/popup/__form/popup__form-picture.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/popup/__form/popup__form-place.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/popup/__heading/popup__heading-person.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/popup/__heading/popup__heading-place.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/popup/__input/_error/popup__input_error.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/popup/__input/_person/popup__input_person.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/popup/__input/_place/popup__input_place.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/popup/__input/popup__input.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/popup/__label/popup__label.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/popup/__picture/popup__picture-link.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/popup/__picture/popup__picture-name.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/popup/__save/popup__save-person.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/popup/__save/popup__save-place.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/popup/_active/popup_active.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/popup/_type/_card/popup_type_card.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/popup/_type/_image/popup_type_image.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/popup/_type/_person/popup_type_person.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/popup/popup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/profile/__add/profile__add.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/profile/__avatar/profile__avatar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/profile/__edit/profile__edit.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/profile/__subtitle/profile__subtitle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/profile/__title/profile__title.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/profile/profile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/blocks/template/new-card.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/components/Card.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/components/FormValidator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/components/Popup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/components/PopupWithForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/components/PopupWithImage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/components/Section.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/components/UserInfo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/images/avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/images/cancel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/images/church.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/images/close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/images/delete.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/images/delete.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/images/dombai.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/images/edit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/images/elbrus.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/images/heart.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/images/heart2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/images/image.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/images/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/images/pencil.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/images/plus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/pages/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/pages/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/utils/cards.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/utils/constants.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/vendor/fonts/Inter-Black.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/vendor/fonts/Inter-Black.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/vendor/fonts/Inter-Medium.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/vendor/fonts/Inter-Medium.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/vendor/fonts/Inter-Regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/vendor/fonts/Inter-Regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/vendor/fonts/fonts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/vendor/normalize.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blocks/card/__like-total/card__like-total.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blocks/popup/__form/popup__form-confirm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blocks/popup/__heading/popup__heading-avatar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blocks/popup/__heading/popup__heading-confirm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blocks/popup/_type/_confirm/popup_type_confirm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blocks/profile/__avatar-picture/profile__avatar-picture.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PopupWithSubmit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/Vector.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/card/__icon-like/card__icon-like.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/card/__icon-like/card__icon-like.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/card/__title/card__title.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/card/__title/card__title.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/form/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/form/form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/popup/__button/popup__button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__button/popup__button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/popup/popup.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/popup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/profile/__avatar/profile__avatar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/profile/__avatar/profile__avatar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/profile/__edit/profile__edit.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/profile/__edit/profile__edit.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/profile/__subtitle/profile__subtitle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/profile/__subtitle/profile__subtitle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/profile/__title/profile__title.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/profile/__title/profile__title.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/profile/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/profile/profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormValidator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PopupWithImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithImage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Section.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Section.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UserInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/cards.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/constants.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -19,6 +148,7 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2EGq0PSKGozYiXETVgdaAoLPGxA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -28,14 +158,22 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Vladimir/dev/mesto&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Vladimir/dev/mesto - 9-я работа/src/blocks/popup/__form&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Vladimir\dev\mesto - 9-я работа\src\blocks\popup\__form" />
+      <recent name="C:\Users\Vladimir\dev\mesto - 9-я работа\src\blocks\popup\__heading" />
+      <recent name="C:\Users\Vladimir\dev\mesto - 9-я работа\src\blocks\popup\_type\_card" />
+      <recent name="C:\Users\Vladimir\dev\mesto - 9-я работа\src\components" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Vladimir\dev\mesto - 9-я работа\src\blocks\popup\_type\_confirm" />
       <recent name="C:\Users\Vladimir\dev\mesto" />
     </key>
   </component>
@@ -83,7 +221,18 @@
       <workItem from="1662240678423" duration="1420000" />
       <workItem from="1662397301912" duration="21000" />
       <workItem from="1662406852137" duration="3061000" />
-      <workItem from="1662462879835" duration="3864000" />
+      <workItem from="1662462879835" duration="4521000" />
+      <workItem from="1662916132881" duration="5355000" />
+      <workItem from="1663168344617" duration="4047000" />
+      <workItem from="1663261205996" duration="25297000" />
+      <workItem from="1663349020605" duration="11486000" />
+      <workItem from="1663414412056" duration="7627000" />
+      <workItem from="1663425125452" duration="8444000" />
+      <workItem from="1663502479434" duration="23764000" />
+      <workItem from="1663605851792" duration="10771000" />
+      <workItem from="1663675041329" duration="18370000" />
+      <workItem from="1663697915516" duration="4397000" />
+      <workItem from="1663702430562" duration="528000" />
     </task>
     <servers />
   </component>

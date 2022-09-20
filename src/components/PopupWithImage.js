@@ -13,14 +13,4 @@ export class PopupWithImage extends Popup {
         inputNamePicture.textContent = item.alt;
         super.open();
     }
-
 }
-//
-//
-// /* Вызов формы увеличения картинки */
-// function handleCardClick(name, link) {
-//     openPopup(popupBigPictureImage);
-//     // inputLinkPicture.src = link;
-//     // inputLinkPicture.alt = name;
-//     inputNamePicture.textContent = name;
-// }

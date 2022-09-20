@@ -1,13 +1,34 @@
 import './index.css';
 
 import {Card} from "../components/Card.js";
-import {initialCards} from "../utils/cards.js";
 import {PopupWithImage} from "../components/PopupWithImage.js";
 import {Section} from "../components/Section.js";
 import {UserInfo} from "../components/UserInfo.js";
 import {PopupWithForm} from "../components/PopupWithForm.js";
 import {Validation} from "../components/FormValidator.js";
-import {buttonOpenEditPerson, inputJobPerson, jobProfile, nameProfile, inputNamePerson, formPerson, popupTypePerson, popupBigPictureImage, popupNewPlace, formPlace, buttonOpenNewPlace, cardContent} from "../utils/constants.js";
+import {Api} from "../components/Api.js";
+import {PopupWithSubmit} from "../components/PopupWithSubmit.js";
+import {
+    buttonOpenEditPerson,
+    inputJobPerson,
+    jobProfile,
+    nameProfile,
+    inputNamePerson,
+    formPerson,
+    popupTypePerson,
+    popupBigPictureImage,
+    popupNewPlace,
+    formPlace,
+    buttonOpenNewPlace,
+    cardContent,
+    profileAvatar,
+    popupAvatar,
+    avatarEdit,
+    formAvatar,
+    avatarFromServer,
+    popupConfirm,
+    buttonSubmit
+} from "../utils/constants.js";
 
 export const selectorsConfig = {
     form: '.form',
@@ -21,26 +42,89 @@ export const selectorsConfig = {
     cardTemplateTypePlace: '.card-template_type_place',
 };
 
+let userId;
+
+const api = new Api({
+    url: 'https://nomoreparties.co/v1/cohort-50/',
+    headers: {
+        authorization: '81329a12-6862-4862-a5bb-784002a24ef0',
+        'content-type': 'application/json'
+    }
+})
+
 const personInfo = new UserInfo( {
     personSelector: nameProfile,
     jobSelector: jobProfile
 })
 
+const initialUserInfo = api.getUserInfo()
+initialUserInfo.then((userData) => {
+    personInfo.setUserInfo(userData);
+    userId = userData._id;
+    profileAvatar.src = userData.avatar;
+})
+    .catch((err) => {
+        console.log(`Ошибка: код ${err.status}`)
+    })
+
 const personPopup = new PopupWithForm(popupTypePerson,
     (profileInfo) => {
-    personInfo.setUserInfo(profileInfo)
+    renderLoading(true);
+    const sendToServer = api.updateProfile(profileInfo);
+    sendToServer.then((res) => {
+        personInfo.setUserInfo(res);
+    })
+    .catch((err) => {
+        console.log(`Ошибка: код ${err.status}`)
+    })
+    .finally(() => {
+        renderLoading(false)
+    });
 });
 
 buttonOpenEditPerson.addEventListener('click', () => {
     personPopup.open();
-    const {title, subtitle} = personInfo.getUserInfo();
-    inputNamePerson.value = title;
-    inputJobPerson.value = subtitle;
+    const {name, about} = personInfo.getUserInfo();
+    inputNamePerson.value = name;
+    inputJobPerson.value = about;
     popupPersonValid.clearSpan();
     popupPersonValid.activateButton();
 })
 
+const personAvatar = new PopupWithForm(popupAvatar,
+    (avatarUrl) => {
+    renderLoading(true);
+    const sendToServer = api.getAvatarInfo(avatarUrl);
+    sendToServer.then((res) => {
+        avatarFromServer.src = res.avatar;
+    })
+    .catch((err) => {
+        console.log(`Ошибка: код ${err.status}`)
+    })
+    .finally(() => {
+        renderLoading(false)
+    });
+});
+
+avatarEdit.addEventListener( 'click', () => {
+    personAvatar.open();
+    popupAvatarValid.clearSpan();
+    popupAvatarValid.deactivateButton();
+})
+
 const pictureBigSize = new PopupWithImage(popupBigPictureImage);
+
+let cardId;
+let cardForDelete;
+const popupActivate = new PopupWithSubmit(popupConfirm, () => {
+    const deleteCard = api.deleteCard(cardId);
+    deleteCard.then(() => {
+        cardForDelete.remove()
+        })
+    .catch((err) => {
+        console.log(`Ошибка: код ${err.status}`)
+    })
+});
 
 // функция отрисоки 1 карточки
 const createCard = (pictureData) => {
@@ -48,13 +132,50 @@ const createCard = (pictureData) => {
         data: pictureData,
         handleCardClick: (photo) => {
             pictureBigSize.open(photo);
-        }
-    }, selectorsConfig.cardTemplateTypePlace);
+        },
+        handleCardDelete: (currentCardId, currentCard) => {
+            popupActivate.open();
+            cardId = currentCardId;
+            cardForDelete = currentCard;
+        },
+        handleLikeClick: (likeButton, currentCardId, totalLike) => {
+            if (likeButton.classList.contains('card__icon-like_active')) {
+                const likeDelete = api.removeLike(currentCardId);
+                likeDelete.then((res) => {
+                    totalLike.textContent = res.likes.length;
+                    likeButton.classList.remove('card__icon-like_active');
+                })
+                .catch((err) => {
+                    console.log(`Ошибка: код ${err.status}`)
+                })
+            } else {
+                const likeAdd = api.addLike(currentCardId);
+                likeAdd.then((res)  => {
+                    totalLike.textContent = res.likes.length;
+                    likeButton.classList.add('card__icon-like_active');
+                })
+                .catch((err) => {
+                    console.log(`Ошибка: код ${err.status}`)
+                })
+            }
+        },
+    },
+        userId,
+        selectorsConfig.cardTemplateTypePlace
+    );
     return picture.generateCard();
 }
 
+const initialServerCards = api.getInitialCards();
+initialServerCards.then((result) => {
+    result.reverse();
+    cardSection.renderItems(result) // выполнили метод отрисовки
+})
+    .catch((err) => {
+        console.log(`Ошибка: код ${err.status}`)
+    })
+
 const cardSection = new Section({
-    items: initialCards,
     renderer: (initialCardsElement) => {
         const photoCard = createCard(initialCardsElement) // вызвали функцию отрисовки карточки
         cardSection.addItem(photoCard) // добавили карточку в ДОМ
@@ -63,8 +184,18 @@ const cardSection = new Section({
 
 const placePopup = new PopupWithForm(popupNewPlace,
     (inputInfo) => {
-        const newCard = createCard(inputInfo);
-        cardSection.addItem(newCard)
+        renderLoading(true);
+        const addedCard = api.createNewCard(inputInfo);
+        addedCard.then((res) => {
+            const newCard = createCard(res);
+            cardSection.addItem(newCard)
+            })
+        .catch((err) => {
+            console.log(`Ошибка: код ${err.status}`);
+        })
+        .finally(() => {
+            renderLoading(false)
+        });
     });
 
 buttonOpenNewPlace.addEventListener('click', () => {
@@ -73,14 +204,24 @@ buttonOpenNewPlace.addEventListener('click', () => {
     popupPlaceValid.deactivateButton();
 })
 
+function renderLoading(isLoading) {
+    if (isLoading) {
+        buttonSubmit.textContent = 'Сохранение...';
+    } else {
+        buttonSubmit.textContent = 'Сохранить';
+    }
+}
+
 personPopup.setEventListeners();
 pictureBigSize.setEventListeners();
 placePopup.setEventListeners();
-
-cardSection.renderItems() // выполнили метод отрисовки
+personAvatar.setEventListeners();
+popupActivate.setEventListeners();
 
 /* Проверка валидности */
 const popupPersonValid = new Validation(selectorsConfig, formPerson);
 popupPersonValid.enableValidation();
 const popupPlaceValid = new Validation(selectorsConfig, formPlace);
 popupPlaceValid.enableValidation();
+const popupAvatarValid = new Validation(selectorsConfig, formAvatar);
+popupAvatarValid.enableValidation();

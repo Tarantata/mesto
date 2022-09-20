@@ -2,7 +2,7 @@
   width: 24px;
   height: 24px;
   padding: 0;
-  margin: auto auto 10px 18px;
+  margin: auto 18px 10px 18px;
   background: #000000 url('../../../images/edit.png') no-repeat center / 45%;
   border: 1px solid #FFFFFF;
   cursor: pointer;
@@ -15,7 +15,7 @@
 
 @media screen and (max-width: 920px) {
   .profile__edit {
-    margin: 22px 0 0 18px;
+    margin: 22px 18px 0 18px;
   }
 }
 

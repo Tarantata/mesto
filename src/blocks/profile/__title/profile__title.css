@@ -1,8 +1,7 @@
 .profile__title {
-  max-width: 294px;
+  max-width: 510px;
   width: 100%;
-  margin: 22px 0 0 30px;
-  cursor: pointer;
+  margin:22px 0 0 6px;
   grid-area: title;
   font-weight: 500;
   font-size: 42px;

@@ -4,7 +4,8 @@
   padding: 0;
   color: #ffffff;
   display: grid;
-  grid-template-columns: 120px 324px auto 150px;
+  /*grid-template-columns: 120px 324px auto 150px;*/
+  grid-template-columns: 144px max-content auto 150px;
   grid-template-rows: 1fr 1fr;
   grid-template-areas:
   "avatar title edit add"

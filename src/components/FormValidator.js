@@ -12,7 +12,7 @@ export class Validation {
 
     _showInputError(inputElement, errorMessage) {
       const inputName = inputElement.getAttribute('name');
-      const errorElement = this._formType.querySelector(`#${inputName}-error`);
+      const errorElement = this._formType.querySelector(`.${inputName}-error`);
       inputElement.classList.add(this._inputRedBorder);
       errorElement.textContent = errorMessage;
       errorElement.classList.add(this._errorActive);
@@ -20,7 +20,7 @@ export class Validation {
 
     _hideInputError(inputElement) {
       const inputName = inputElement.getAttribute('name');
-      const errorElement = this._formType.querySelector(`#${inputName}-error`);
+      const errorElement = this._formType.querySelector(`.${inputName}-error`);
       inputElement.classList.remove(this._inputRedBorder);
       errorElement.classList.remove(this._errorActive);
       errorElement.textContent = '';
