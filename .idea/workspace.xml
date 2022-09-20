@@ -89,41 +89,8 @@
       <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/vendor/fonts/Inter-Regular.woff2" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/vendor/fonts/fonts.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../mesto - 8-я работа/src/vendor/normalize.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/card/__like-total/card__like-total.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/popup/__form/popup__form-confirm.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/popup/__heading/popup__heading-avatar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/popup/__heading/popup__heading-confirm.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/popup/_type/_confirm/popup_type_confirm.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/profile/__avatar-picture/profile__avatar-picture.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Api.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PopupWithSubmit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Vector.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/card/__icon-like/card__icon-like.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/card/__icon-like/card__icon-like.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/card/__title/card__title.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/card/__title/card__title.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/form/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/form/form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/popup/__button/popup__button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__button/popup__button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/popup/popup.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/popup.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/profile/__avatar/profile__avatar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/profile/__avatar/profile__avatar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/profile/__edit/profile__edit.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/profile/__edit/profile__edit.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/profile/__subtitle/profile__subtitle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/profile/__subtitle/profile__subtitle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/profile/__title/profile__title.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/profile/__title/profile__title.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/profile/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/profile/profile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FormValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormValidator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopupWithImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithImage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Section.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Section.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UserInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/cards.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/constants.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +199,7 @@
       <workItem from="1663605851792" duration="10771000" />
       <workItem from="1663675041329" duration="18370000" />
       <workItem from="1663697915516" duration="4397000" />
-      <workItem from="1663702430562" duration="528000" />
+      <workItem from="1663702430562" duration="1123000" />
     </task>
     <servers />
   </component>
