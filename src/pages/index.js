@@ -78,7 +78,7 @@ const personAvatar = new PopupWithForm('.popup_type_avatar',
     renderLoading(true, popupAvatar, 'Сохранить');
     const sendToServer = api.getAvatarInfo(avatarUrl);
     sendToServer.then((res) => {
-        profileAvatar.src = res.avatar;
+        personInfo.setUserInfo(res);
         personAvatar.close()
     })
     .catch((err) => {
@@ -123,7 +123,7 @@ const createCard = (pictureData) => {
             cardForDelete = currentCard;
         },
         handleLikeClick: (card) => {
-            if (card._likeButton.classList.contains('card__icon-like_active')) {
+            if (card.isLiked()) {
                 const likeDelete = api.removeLike(card.getId());
                 likeDelete.then((res) => {
                     card.deleteLike(res)
@@ -190,10 +190,11 @@ buttonOpenNewPlace.addEventListener('click', () => {
 })
 
 function renderLoading(isLoading, popupElement, submitText) {
+    const popupButton = popupElement.querySelector('.popup__button')
     if (isLoading) {
-        popupElement.querySelector('.popup__button').textContent = 'Сохранение...';
+        popupButton.textContent = 'Сохранение...';
     } else {
-        popupElement.querySelector('.popup__button').textContent = submitText
+        popupButton.textContent = submitText
     }
 }
 

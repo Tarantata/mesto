@@ -55,6 +55,10 @@ putLike(result) {
   this._likeButton.classList.add('card__icon-like_active')
 }
 
+isLiked() {
+  return this._likeButton.classList.contains('card__icon-like_active');
+}
+
   generateCard() {
     this._cardPlace = this._element.querySelector('.card__place');
     this._cardTitle = this._element.querySelector('.card__title');
