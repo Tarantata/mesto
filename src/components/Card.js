@@ -1,4 +1,4 @@
-import { selectorsConfig } from '../pages/index.js';
+import { selectorsConfig } from '../utils/constants.js';
 
 export class Card {
   constructor ({data, handleCardClick, handleCardDelete, handleLikeClick}, userId, templateSelector) {
@@ -21,7 +21,6 @@ export class Card {
     const cardElement = document
     .querySelector(this._templateSelector)
     .content
-
     .querySelector(selectorsConfig.card)
     .cloneNode(true);
     return cardElement;
@@ -42,6 +41,20 @@ export class Card {
     }
   };
 
+  getId() {
+    return this._cardId;
+  }
+
+deleteLike(result) {
+  this._totalLike.textContent = result.likes.length;
+  this._likeButton.classList.remove('card__icon-like_active')
+}
+
+putLike(result) {
+  this._totalLike.textContent = result.likes.length;
+  this._likeButton.classList.add('card__icon-like_active')
+}
+
   generateCard() {
     this._cardPlace = this._element.querySelector('.card__place');
     this._cardTitle = this._element.querySelector('.card__title');
@@ -57,7 +70,7 @@ export class Card {
 
   _setEventListeners() {
       this._element.querySelector('.card__icon-like').addEventListener('click', () => {
-        this._handleLikeClick(this._likeButton, this._cardId, this._totalLike);
+        this._handleLikeClick(this);
     });
       this._element.querySelector('.card__icon-delete').addEventListener('click', () => {
         this._handleCardDelete(this._cardId, this._element);
@@ -67,6 +80,3 @@ export class Card {
     });     
   }
 }
-
-// сделать логику отображения кнопки удаления (корзины), если айди сходятся, то она есть, если нет - то ее надо удалить
-// навесить слушатель события на корзину -> что бы она открыла попап подтверждения

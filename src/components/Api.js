@@ -4,13 +4,11 @@ export class Api{
         this._headers = config.headers
     }
 
-    _checkingInfo() {
-        return (res) => {
+    _checkingInfo(res) {
             if (res.ok) {
                 return res.json()
             }
             return Promise.reject(console.log(`Ошибка: код ${res.status}`))
-        }
     }
 
     getUserInfo() {
@@ -18,7 +16,7 @@ export class Api{
             method: 'GET',
             headers: this._headers
         })
-            .then(this._checkingInfo())
+            .then(this._checkingInfo)
     }
 
     getInitialCards() {
@@ -26,7 +24,7 @@ export class Api{
             method: 'GET',
             headers: this._headers
         })
-            .then(this._checkingInfo())
+            .then(this._checkingInfo)
     }
 
     updateProfile(userData) {
@@ -35,7 +33,7 @@ export class Api{
             headers: this._headers,
             body: JSON.stringify(userData)
         })
-            .then(this._checkingInfo())
+            .then(this._checkingInfo)
     }
 
     getAvatarInfo(avatarData) {
@@ -44,7 +42,7 @@ export class Api{
             headers: this._headers,
             body: JSON.stringify(avatarData)
         })
-            .then(this._checkingInfo())
+            .then(this._checkingInfo)
     }
 
     createNewCard(cardData) {
@@ -53,7 +51,7 @@ export class Api{
             headers: this._headers,
             body: JSON.stringify(cardData)
         })
-            .then(this._checkingInfo())
+            .then(this._checkingInfo)
     }
 
     addLike(cardId) {
@@ -61,7 +59,7 @@ export class Api{
             method: 'PUT',
             headers: this._headers,
         })
-            .then(this._checkingInfo())
+            .then(this._checkingInfo)
     }
 
     removeLike(cardId) {
@@ -69,7 +67,7 @@ export class Api{
             method: 'DELETE',
             headers: this._headers,
         })
-            .then(this._checkingInfo())
+            .then(this._checkingInfo)
     }
 
     deleteCard(cardId) {
@@ -77,7 +75,6 @@ export class Api{
             method: 'DELETE',
             headers: this._headers,
         })
-            .then(this._checkingInfo())
+            .then(this._checkingInfo)
     }
-
 }

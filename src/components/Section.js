@@ -1,8 +1,8 @@
 export class Section {
-    constructor ({ renderer }, containerSelector){
+    constructor ({ renderer }, cardContainer){
         // this._items = items;
         this._renderer = renderer; // 1 готовая карточка
-        this._containerSelector = containerSelector;
+        this._cardContainer = cardContainer;
     }
 
     //публичный метод, отвечающий за отрисовку всех элементов
@@ -14,6 +14,6 @@ export class Section {
 
     //публичный метод, принимающий DOM-элемент и добавляющий его в контейнер
     addItem(element){ // добавление карточки в разметку
-        this._containerSelector.prepend(element);
+        this._cardContainer.prepend(element);
     }
 }

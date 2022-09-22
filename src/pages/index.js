@@ -5,10 +5,11 @@ import {PopupWithImage} from "../components/PopupWithImage.js";
 import {Section} from "../components/Section.js";
 import {UserInfo} from "../components/UserInfo.js";
 import {PopupWithForm} from "../components/PopupWithForm.js";
-import {Validation} from "../components/FormValidator.js";
+import {FormValidator} from "../components/FormValidator.js";
 import {Api} from "../components/Api.js";
 import {PopupWithSubmit} from "../components/PopupWithSubmit.js";
 import {
+    selectorsConfig,
     buttonOpenEditPerson,
     inputJobPerson,
     jobProfile,
@@ -16,7 +17,6 @@ import {
     inputNamePerson,
     formPerson,
     popupTypePerson,
-    popupBigPictureImage,
     popupNewPlace,
     formPlace,
     buttonOpenNewPlace,
@@ -25,22 +25,7 @@ import {
     popupAvatar,
     avatarEdit,
     formAvatar,
-    avatarFromServer,
-    popupConfirm,
-    buttonSubmit
 } from "../utils/constants.js";
-
-export const selectorsConfig = {
-    form: '.form',
-    button: '.popup__button',
-    input: '.popup__input',
-    buttonInvalid: 'popup__button_invalid',
-    inputRedBorder: 'popup__input_error',
-    inputError: 'error',
-    errorActive: 'error_active',
-    card: '.card',
-    cardTemplateTypePlace: '.card-template_type_place',
-};
 
 let userId;
 
@@ -53,32 +38,29 @@ const api = new Api({
 })
 
 const personInfo = new UserInfo( {
-    personSelector: nameProfile,
-    jobSelector: jobProfile
+    personElement: nameProfile,
+    jobElement: jobProfile,
+    avatar: profileAvatar,
+    handleId: (actualUserId) => {
+        userId = actualUserId
+    }
 })
 
 const initialUserInfo = api.getUserInfo()
-initialUserInfo.then((userData) => {
-    personInfo.setUserInfo(userData);
-    userId = userData._id;
-    profileAvatar.src = userData.avatar;
-})
-    .catch((err) => {
-        console.log(`Ошибка: код ${err.status}`)
-    })
 
-const personPopup = new PopupWithForm(popupTypePerson,
+const personPopup = new PopupWithForm('.popup_type_person',
     (profileInfo) => {
-    renderLoading(true);
+    renderLoading(true, popupTypePerson, 'Сохранить');
     const sendToServer = api.updateProfile(profileInfo);
     sendToServer.then((res) => {
         personInfo.setUserInfo(res);
+        personPopup.close()
     })
     .catch((err) => {
         console.log(`Ошибка: код ${err.status}`)
     })
     .finally(() => {
-        renderLoading(false)
+        renderLoading(false, popupTypePerson, 'Сохранить')
     });
 });
 
@@ -87,39 +69,41 @@ buttonOpenEditPerson.addEventListener('click', () => {
     const {name, about} = personInfo.getUserInfo();
     inputNamePerson.value = name;
     inputJobPerson.value = about;
-    popupPersonValid.clearSpan();
+    popupPersonValid.clearErrors();
     popupPersonValid.activateButton();
 })
 
-const personAvatar = new PopupWithForm(popupAvatar,
+const personAvatar = new PopupWithForm('.popup_type_avatar',
     (avatarUrl) => {
-    renderLoading(true);
+    renderLoading(true, popupAvatar, 'Сохранить');
     const sendToServer = api.getAvatarInfo(avatarUrl);
     sendToServer.then((res) => {
-        avatarFromServer.src = res.avatar;
+        profileAvatar.src = res.avatar;
+        personAvatar.close()
     })
     .catch((err) => {
         console.log(`Ошибка: код ${err.status}`)
     })
     .finally(() => {
-        renderLoading(false)
+        renderLoading(false, popupAvatar, 'Сохранить')
     });
 });
 
 avatarEdit.addEventListener( 'click', () => {
     personAvatar.open();
-    popupAvatarValid.clearSpan();
+    popupAvatarValid.clearErrors();
     popupAvatarValid.deactivateButton();
 })
 
-const pictureBigSize = new PopupWithImage(popupBigPictureImage);
+const pictureBigSize = new PopupWithImage('.popup_type_image');
 
 let cardId;
 let cardForDelete;
-const popupActivate = new PopupWithSubmit(popupConfirm, () => {
+const popupActivate = new PopupWithSubmit('.popup_type_confirm', () => {
     const deleteCard = api.deleteCard(cardId);
     deleteCard.then(() => {
-        cardForDelete.remove()
+        cardForDelete.remove();
+        popupActivate.close()
         })
     .catch((err) => {
         console.log(`Ошибка: код ${err.status}`)
@@ -138,21 +122,19 @@ const createCard = (pictureData) => {
             cardId = currentCardId;
             cardForDelete = currentCard;
         },
-        handleLikeClick: (likeButton, currentCardId, totalLike) => {
-            if (likeButton.classList.contains('card__icon-like_active')) {
-                const likeDelete = api.removeLike(currentCardId);
+        handleLikeClick: (card) => {
+            if (card._likeButton.classList.contains('card__icon-like_active')) {
+                const likeDelete = api.removeLike(card.getId());
                 likeDelete.then((res) => {
-                    totalLike.textContent = res.likes.length;
-                    likeButton.classList.remove('card__icon-like_active');
+                    card.deleteLike(res)
                 })
                 .catch((err) => {
                     console.log(`Ошибка: код ${err.status}`)
                 })
             } else {
-                const likeAdd = api.addLike(currentCardId);
+                const likeAdd = api.addLike(card.getId());
                 likeAdd.then((res)  => {
-                    totalLike.textContent = res.likes.length;
-                    likeButton.classList.add('card__icon-like_active');
+                    card.putLike(res);
                 })
                 .catch((err) => {
                     console.log(`Ошибка: код ${err.status}`)
@@ -167,13 +149,15 @@ const createCard = (pictureData) => {
 }
 
 const initialServerCards = api.getInitialCards();
-initialServerCards.then((result) => {
-    result.reverse();
-    cardSection.renderItems(result) // выполнили метод отрисовки
-})
+Promise.all([initialUserInfo, initialServerCards])
+    .then(([userData, cards]) => {
+        personInfo.setUserInfo(userData);
+        cards.reverse();
+        cardSection.renderItems(cards)
+    })
     .catch((err) => {
         console.log(`Ошибка: код ${err.status}`)
-    })
+    });
 
 const cardSection = new Section({
     renderer: (initialCardsElement) => {
@@ -182,33 +166,34 @@ const cardSection = new Section({
     } // выполнится для каждго элемента массива (столько раз сколько этих элементов)
 }, cardContent);
 
-const placePopup = new PopupWithForm(popupNewPlace,
+const placePopup = new PopupWithForm('.popup_type_card',
     (inputInfo) => {
-        renderLoading(true);
+        renderLoading(true, popupNewPlace, 'Создать');
         const addedCard = api.createNewCard(inputInfo);
         addedCard.then((res) => {
             const newCard = createCard(res);
-            cardSection.addItem(newCard)
+            cardSection.addItem(newCard);
+            placePopup.close()
             })
         .catch((err) => {
             console.log(`Ошибка: код ${err.status}`);
         })
         .finally(() => {
-            renderLoading(false)
+            renderLoading(false, popupNewPlace, 'Создать')
         });
     });
 
 buttonOpenNewPlace.addEventListener('click', () => {
     placePopup.open();
-    popupPlaceValid.clearSpan();
+    popupPlaceValid.clearErrors();
     popupPlaceValid.deactivateButton();
 })
 
-function renderLoading(isLoading) {
+function renderLoading(isLoading, popupElement, submitText) {
     if (isLoading) {
-        buttonSubmit.textContent = 'Сохранение...';
+        popupElement.querySelector('.popup__button').textContent = 'Сохранение...';
     } else {
-        buttonSubmit.textContent = 'Сохранить';
+        popupElement.querySelector('.popup__button').textContent = submitText
     }
 }
 
@@ -219,9 +204,9 @@ personAvatar.setEventListeners();
 popupActivate.setEventListeners();
 
 /* Проверка валидности */
-const popupPersonValid = new Validation(selectorsConfig, formPerson);
+const popupPersonValid = new FormValidator(selectorsConfig, formPerson);
 popupPersonValid.enableValidation();
-const popupPlaceValid = new Validation(selectorsConfig, formPlace);
+const popupPlaceValid = new FormValidator(selectorsConfig, formPlace);
 popupPlaceValid.enableValidation();
-const popupAvatarValid = new Validation(selectorsConfig, formAvatar);
+const popupAvatarValid = new FormValidator(selectorsConfig, formAvatar);
 popupAvatarValid.enableValidation();

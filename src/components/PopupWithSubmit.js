@@ -1,5 +1,5 @@
 import {Popup} from "./Popup.js";
-import {selectorsConfig} from "../pages/index.js";
+import {selectorsConfig} from "../utils/constants.js";
 
 export class PopupWithSubmit extends Popup{
     constructor(popupSelector, submitConfirm) {
@@ -9,14 +9,14 @@ export class PopupWithSubmit extends Popup{
     }
 
     _getForm() {
-        return this._popupSelector.querySelector(selectorsConfig.form)
+        return this._popup.querySelector(selectorsConfig.form)
     }
 
     setEventListeners() {
         this._form.addEventListener('submit', (evt) => {
             evt.preventDefault();
             this._submitConfirm();
-            this.close()
+            // this.close()
         })
         super.setEventListeners()
     }

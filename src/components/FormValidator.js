@@ -1,11 +1,9 @@
-export class Validation {
+export class FormValidator {
     constructor (validationData, formType) {
-        this._form = validationData.form;
         this._button = validationData.button;
         this._input = validationData.input; 
         this._buttonInvalid = validationData.buttonInvalid;
         this._inputRedBorder = validationData.inputRedBorder;
-        this._inputError = validationData.inputError;
         this._errorActive = validationData.errorActive;        
         this._formType = formType;
     }
@@ -62,7 +60,7 @@ export class Validation {
       });
     }
 
-    clearSpan() {         
+    clearErrors() {
       this._inputList.forEach((input) => {
         this._hideInputError(input)
       })
